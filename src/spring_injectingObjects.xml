@@ -22,6 +22,44 @@
     <property name="x" value="20"></property>
     <property name="y" value="0"></property>
  </bean>
+
+	<bean id="triangle1" class="com.sample.injectinobjects.Triangle">
+		<property name="pointA" ref="zeroPoint"></property>
+		<property name="pointB">
+			<bean class="com.sample.injectinobjects.Point">
+				<property name="x" value="-21"></property>
+				<property name="y" value="0"></property>
+			</bean>
+
+		</property>
+		<property name="pointC">
+			<bean class="com.sample.injectinobjects.Point">
+				<property name="x" value="21"></property>
+				<property name="y" value="0"></property>
+			</bean>
+		</property>
+
+	</bean>
+	
+		<bean id="triangle2" class="com.sample.injectinobjects.Triangle">
+		<property name="pointA" ref="zeroPoint">		 
+		</property>
+		<property name="pointB">
+			<bean class="com.sample.injectinobjects.Point">
+				<property name="x" value="-21"></property>
+				<property name="y" value="0"></property>
+			</bean>
+
+		</property>
+		<property name="pointC">
+			<bean class="com.sample.injectinobjects.Point">
+				<property name="x" value="21"></property>
+				<property name="y" value="0"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	<alias name="triangle2" alias="triangle3"/>
    
    
 </beans>
