@@ -27,8 +27,12 @@
 	<bean id="circle" class="com.sample.annotations.Circle">
 	<property name="center" ref="pointC"></property>
 	</bean>
+	  <bean id="name" class="java.lang.String">
+    	<constructor-arg type="java.lang.String" value="Pathmasri"/>
+    </bean>
 	
 <!-- 	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean> -->
 <!-- <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"></bean> -->
  <context:annotation-config></context:annotation-config>
+ <context:component-scan base-package="com.sample.annotations"></context:component-scan>
 </beans>

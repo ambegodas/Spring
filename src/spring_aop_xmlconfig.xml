@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+
+	<aop:aspectj-autoproxy/>
+	
+	<bean id="traingle" class="com.sample.aop.model.Traingle">
+	<property name="name" value="Traingle Name"></property>
+	</bean>
+	
+	<bean id="circle" class="com.sample.aop.model.Circle">
+<!-- 	<property name="name" value="Circle Name"></property> -->
+	</bean>
+	
+	<bean id="shapeService" class="com.sample.aop.service.ShapeService" autowire="byName">
+	
+	</bean>
+
+
+
+	<bean name="loginAspectXmlConfig" class="com.sample.aop.aspect.LoginAspectXmlConfig"></bean>
+	<aop:config>
+		<aop:aspect id="loginAspect" ref="loginAspectXmlConfig">
+			<aop:pointcut expression="execution(* get*())" id="allGetters" />
+			<aop:after method="testAdvice" pointcut-ref="allGetters" />
+		</aop:aspect>
+	</aop:config>
+	
+</beans>

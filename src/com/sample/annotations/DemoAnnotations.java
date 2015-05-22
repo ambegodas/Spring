@@ -15,8 +15,18 @@ public class DemoAnnotations {
 		//testAutowiredAnnotation();
 		//testQualifireAnnotation();
 		//testResourceAnnotation();
-		testJSRannotations();
+		//testJSRannotations();
+		testComponentAnnotation();
 				
+	}
+
+	/**
+	 * 
+	 */
+	private static void testComponentAnnotation() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring_annotations.xml");
+		Student student = (Student)context.getBean("student");
+		System.out.println(student.getName());		
 	}
 
 	/**
