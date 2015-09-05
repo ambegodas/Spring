@@ -4,15 +4,18 @@
  */
 package com.sample.jdbc.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 
-import org.hibernate.annotations.Entity;
+
 
 
 
 @Entity
 public class Circle {
 	
+@Id
 	private int circleId;
 	
 	private String name;

@@ -17,14 +17,14 @@ public class AspectMain {
 	 */
 	public static void main(String[] args) {
 		
-		//testWildCardandPointCuts();
+		testWildCardandPointCuts();
 		//testJoinPoint();
 		//testArgsAdvice();
 		//testAfterType();
 		//testAroundType();
 		//testCustomAnnotations();
 		//testXMLconfigs();
-		testAOPproxy();
+		//testAOPproxy();
 		
 
 	}
